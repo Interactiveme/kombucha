@@ -2,9 +2,9 @@
 
 {<body}
     <div>
-        <form id="loginForm" method="post">
+        <form id="registerForm" method="post">
             <fieldset>
-                <h2>Login</h2>
+                <h2>Register</h2>
                 {?messages}
                     <ul>
                         {#messages}
@@ -23,19 +23,23 @@
                         <td><input id="password" name="password" type="password"/></td>
                     </tr>
                     <tr>
+                        <td><label for="password">Confirm Password: </label></td>
+                        <td><input id="confirm_password" name="confirm_password" type="password"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="name">Name: </label></td>
+                        <td><input id="name" name="name" type="text"/></td>
+                    </tr>
+                    <tr>
                         <td>
-                            <input type="submit" value="Login"/>
+                            <input type="submit" value="Register"/>
                             <input type="hidden" name="_csrf" value="{_csrf}"/>
                         </td>
                         <td></td>
                     </tr>
-                    <tr>
-                    <td><a href="/Register" class="btn btn-default"><span class="fa fa-user"></span> Register</a></td>
-                    </tr>
                 </table>
 
             </fieldset>
-        
         </form>
     </div>
 {/body}

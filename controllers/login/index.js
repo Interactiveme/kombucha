@@ -1,14 +1,11 @@
 'use strict';
 
-
 var LoginModel = require('../../models/login'),
  passport = require('passport');
-
 
 module.exports = function (router) {
 
     var model = new LoginModel();
-
 
     /**
      * Display the login page. We also want to display any error messages that result from a failed login attempt.
@@ -29,14 +26,11 @@ module.exports = function (router) {
      */
     router.post('/', function (req, res) {
 
-        passport.authenticate('local', {
+        passport.authenticate('local-login', {
             successRedirect: req.session.goingTo || '/profile',
             failureRedirect: '/login',
             failureFlash: true
         })(req, res);
 
     });
-
-
-
 };
