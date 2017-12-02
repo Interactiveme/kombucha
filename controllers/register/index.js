@@ -17,7 +17,7 @@ module.exports = function (router) {
     });
      
     router.post('/', function (req, res) {
-        
+        console.log("gerister new user");
         passport.authenticate('local-register', {
             successRedirect: req.session.goingTo || '/profile',
             failureRedirect: '/register',
