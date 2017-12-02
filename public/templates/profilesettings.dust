@@ -2,6 +2,8 @@
 
 {<body}
     <div>
+        <a href="/Balance" class="btn btn-default"><span class="fa fa-user"></span> Balance</a>
+
         <form id="settingsForm" method="post">
             <fieldset>
                 <h2>Settings</h2>

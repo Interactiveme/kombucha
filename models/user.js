@@ -9,10 +9,10 @@ var mongoose = require('mongoose'),
 var userModel = function () {
 
         var userSchema = mongoose.Schema({
-            name: String,
-            login: { type: String, unique: true },  //Ensure logins are unique.
-            password: String, //We'll store bCrypt hashed passwords.  Just say no to plaintext!
-            role: String
+            name: {required: true,type: String},
+            login: {required: true, type: String, unique: true },  //Ensure logins are unique.
+            password: {required: true,type: String}, //We'll store bCrypt hashed passwords.  Just say no to plaintext!
+            role: {required: true,type: String}
         });
 
         /**

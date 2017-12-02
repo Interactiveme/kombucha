@@ -1,0 +1,12 @@
+{>"layouts/master" /}
+
+{<body}
+    {?messages}
+        <ul>
+            {#messages}
+                <li>{.}</li>
+            {/messages}
+        </ul>
+    {/messages}
+<h2>Balance: {balanceObject.balance}</h2>
+{/body}
