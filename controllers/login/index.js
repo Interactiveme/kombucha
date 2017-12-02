@@ -1,11 +1,11 @@
 'use strict';
 
-var LoginModel = require('../../models/login'),
+var MessagesModel = require('../../models/messages'),
  passport = require('passport');
 
 module.exports = function (router) {
 
-    var model = new LoginModel();
+    var model = new MessagesModel("Login");
 
     /**
      * Display the login page. We also want to display any error messages that result from a failed login attempt.

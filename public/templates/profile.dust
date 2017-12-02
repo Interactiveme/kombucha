@@ -3,4 +3,7 @@
 {<body}
     <h1>{@pre type="content" key="greeting"/}</h1>
     <p>You are <strong>{user.name}</strong> and your role is <strong>{user.role}</strong></p>
+    <a href="/ProfileSettings" class="btn btn-default"><span class="fa fa-user"></span> Settings</a>
+
+
 {/body}
