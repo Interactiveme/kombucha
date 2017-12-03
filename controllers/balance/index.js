@@ -1,7 +1,7 @@
 'use strict';
 
 var MessagesModel = require('../../models/messages');
-var CryptopiaApi = require('../../lib/cryptopia/api');
+var Cryptopia = require('../../lib/cryptopia/cryptopia');
 var Settings = require('../../models/settings');
 
 module.exports = function (router) {
@@ -19,9 +19,12 @@ module.exports = function (router) {
             }
 
             if (settings) {
-                var api = new CryptopiaApi(settings);
-                var balanceObject = api.getBalance();
-                console.log(balanceObject);
+                var api = new Cryptopia(settings.api_key, settings.api_secret);
+                var balanceObject = api.getBalance(function(error, data){
+                        console.log(data);
+                },"btc");
+
+                console.log("balanceObject",balanceObject);
                 model.balanceObject = balanceObject;
                 res.render('balance', model);
                 
